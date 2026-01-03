@@ -1,2 +1,2 @@
 # charith-portfolio
-Charith Banneheka Resume 
+Charith Banneheka Resume

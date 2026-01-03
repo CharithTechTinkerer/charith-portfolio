@@ -9681,4 +9681,184 @@ textarea.form-control {
     stroke-dashoffset: -35px; }
   100% {
     stroke-dasharray: 89, 200;
-    stroke-dashoffset: -136px; } } 
+    stroke-dashoffset: -136px; } }
+
+/* Mobile scrolling fixes */
+@media (max-width: 991.98px) {
+  html {
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    height: auto !important;
+    touch-action: pan-y;
+  }
+  body {
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    position: relative !important;
+    height: auto !important;
+    touch-action: pan-y;
+  }
+  #home-section {
+    position: relative !important;
+    overflow: visible !important;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+  .hero {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+  .owl-carousel.home-slider {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+    position: relative !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .owl-carousel.home-slider .owl-stage-outer {
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+  }
+  .owl-carousel.home-slider .owl-stage {
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+  }
+  .owl-carousel.home-slider .slider-item {
+    height: auto !important;
+    min-height: auto !important;
+    position: relative !important;
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+  }
+  .owl-carousel.home-slider .slider-item .overlay {
+    pointer-events: none !important;
+    touch-action: none !important;
+  }
+  .owl-carousel.home-slider .slider-item .slider-text {
+    height: auto !important;
+    min-height: auto !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column;
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+  }
+  .owl-carousel.home-slider .slider-item .slider-text .one-third {
+    position: relative !important;
+    height: 60vh !important;
+    min-height: 400px !important;
+    max-height: 500px !important;
+    width: 100% !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    order: 1;
+    display: block !important;
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+    pointer-events: auto !important;
+  }
+  .owl-carousel.home-slider .slider-item .slider-text .one-third.img {
+    background-attachment: scroll !important;
+  }
+  .owl-carousel.home-slider .slider-item .slider-text .one-third[style*="background-image"] {
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+  .owl-carousel.home-slider .slider-item .slider-text .one-third .overlay {
+    pointer-events: none !important;
+    touch-action: none !important;
+  }
+  .owl-carousel.home-slider .slider-item .slider-text .one-forth {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    padding: 2em 1em !important;
+    order: 2;
+    display: flex !important;
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+    pointer-events: auto !important;
+  }
+  .owl-carousel.home-slider .slider-item .slider-text {
+    flex-wrap: wrap !important;
+  }
+  .js-fullheight {
+    height: auto !important;
+  }
+  .ftco-navbar-light {
+    position: relative !important;
+  }
+  .ftco-navbar-light.scrolled {
+    position: fixed !important;
+  }
+  /* Ensure page can scroll from top */
+  .hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    touch-action: pan-y !important;
+  }
+  #home-section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    touch-action: pan-y !important;
+  }
+  /* Disable carousel touch dragging on mobile to allow page scroll */
+  .owl-carousel.home-slider {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .owl-carousel.home-slider .owl-stage-outer {
+    overflow: visible !important;
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+  }
+  .owl-carousel.home-slider .owl-item {
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+  }
+  /* Allow touch scrolling on all content */
+  .container,
+  .row,
+  [class*="col-"] {
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+  }
+  /* Ensure all sections allow touch scrolling */
+  section {
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+  }
+  /* Make sure nothing blocks touch events */
+  .ftco-section {
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+  }
+  /* Force enable touch scrolling on document */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Ensure body and html are scrollable */
+  html, body {
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: auto !important;
+  }
+  /* Disable owl carousel touch on mobile */
+  .owl-carousel.home-slider .owl-stage {
+    touch-action: pan-y !important;
+  }
+  .owl-carousel.home-slider .owl-item {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

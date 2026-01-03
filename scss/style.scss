@@ -29,6 +29,11 @@ $secondary: #a0f669;
 
 html {
 	// overflow-x: hidden;
+	@include media-breakpoint-down(md){
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
 }
 body {
 	font-family: $font-primary;
@@ -37,6 +42,12 @@ body {
 	line-height: 1.8;
 	font-weight: 400;
 	color: lighten($black,60%);
+	@include media-breakpoint-down(md){
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		position: relative;
+	}
 	&.menu-show {
 		overflow: hidden;
 		position: fixed;
@@ -398,6 +409,13 @@ h1, h2, h3, h4, h5,
 		position: relative;
 		height: 750px;
 		z-index: 0;
+		@include media-breakpoint-down(md){
+			height: auto;
+			min-height: auto;
+			overflow: visible;
+			touch-action: pan-y;
+			position: relative;
+		}
 		.slider-item {
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -408,6 +426,11 @@ h1, h2, h3, h4, h5,
 			@include media-breakpoint-down(lg){
 				background-position: center center !important;
 			}
+			@include media-breakpoint-down(md){
+				height: auto;
+				min-height: auto;
+				position: relative;
+			}
 			.overlay{
 				position: absolute;
 				top: 0;
@@ -416,12 +439,20 @@ h1, h2, h3, h4, h5,
 				right: 0;
 				background: $black;
 				opacity: 0;
+				@include media-breakpoint-down(md){
+					pointer-events: none;
+				}
 			}
 			.slider-text {
 				height: 750px;
 				z-index: 0;
 				@include media-breakpoint-down(md){
 					text-align: center;
+					height: auto;
+					min-height: auto;
+					position: relative;
+					display: flex;
+					flex-direction: column;
 				}
 				.one-third{
 					width: 60%;
@@ -443,8 +474,14 @@ h1, h2, h3, h4, h5,
 					@include media-breakpoint-down(md){
 						width: 100%;
 						z-index: 0;
+						position: relative;
+						height: 60vh;
+						min-height: 400px;
+						background-size: cover;
+						background-position: center top;
 						.overlay{
 							opacity: .3;
+							pointer-events: none;
 						}
 						&:after{
 							opacity: 0;
@@ -465,13 +502,14 @@ h1, h2, h3, h4, h5,
 					}
 					@include media-breakpoint-down(md){
 						width: 100%;
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
+						position: relative;
+						top: auto;
+						left: auto;
+						right: auto;
+						bottom: auto;
 						z-index: 1;
-						padding: 1em;
+						padding: 2em 1em;
+						min-height: 50vh;
 					}
 					.text{
 						width: 100%;
@@ -1985,4 +2023,4 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
-} 
+}

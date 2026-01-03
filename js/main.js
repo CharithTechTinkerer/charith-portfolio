@@ -18,10 +18,18 @@
 
 
 	var fullHeight = function() {
-
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
+		// Only apply full height on desktop, not on mobile
+		if ($(window).width() > 768) {
 			$('.js-fullheight').css('height', $(window).height());
+		} else {
+			$('.js-fullheight').css('height', 'auto');
+		}
+		$(window).resize(function(){
+			if ($(window).width() > 768) {
+				$('.js-fullheight').css('height', $(window).height());
+			} else {
+				$('.js-fullheight').css('height', 'auto');
+			}
 		});
 
 	};
@@ -37,8 +45,10 @@
 	};
 	loader();
 
-	// Scrollax
-   $.Scrollax();
+	// Scrollax - disable on mobile to prevent scroll issues
+	if ($(window).width() > 768) {
+		$.Scrollax();
+	}
 
 
 
@@ -84,6 +94,7 @@
 	
 
 	var carousel = function() {
+		var isMobile = $(window).width() <= 991;
 		$('.home-slider').owlCarousel({
 	    loop:true,
 	    autoplay: true,
@@ -93,21 +104,51 @@
 	    nav:false,
 	    autoplayHoverPause: false,
 	    items: 1,
+	    touchDrag: !isMobile, // Disable touch drag on mobile to allow page scroll
+	    mouseDrag: !isMobile, // Disable mouse drag on mobile
+	    pullDrag: !isMobile, // Disable pull drag on mobile
 	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
 	    responsive:{
 	      0:{
-	        items:1
+	        items:1,
+	        touchDrag: false,
+	        mouseDrag: false,
+	        pullDrag: false
 	      },
 	      600:{
-	        items:1
+	        items:1,
+	        touchDrag: false,
+	        mouseDrag: false,
+	        pullDrag: false
 	      },
 	      1000:{
-	        items:1
+	        items:1,
+	        touchDrag: true,
+	        mouseDrag: true,
+	        pullDrag: true
 	      }
 	    }
 		});
 	};
 	carousel();
+
+	// Enable touch scrolling on mobile
+	if ($(window).width() <= 991) {
+		// Prevent carousel from blocking touch scroll
+		$('.home-slider').on('touchstart touchmove touchend', function(e) {
+			// Allow default scroll behavior
+			if (e.type === 'touchmove' && e.originalEvent.touches.length === 1) {
+				// Single touch - allow page scroll
+				return true;
+			}
+		});
+		
+		// Ensure body can scroll
+		$('body').css({
+			'overflow-y': 'auto',
+			'-webkit-overflow-scrolling': 'touch'
+		});
+	}
 
 	$('nav .dropdown').hover(function(){
 		var $this = $(this);
@@ -273,4 +314,5 @@
 
 
 
-})(jQuery); 
+})(jQuery);
+
