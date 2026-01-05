@@ -23,6 +23,51 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Image Quality Optimization -->
+    <style>
+      /* Optimize background image rendering for better quality */
+      .owl-carousel.home-slider .slider-item .slider-text .one-third.img,
+      .owl-carousel.home-slider .slider-item .slider-text .one-third[style*="background-image"],
+      .ftco-about .img-about .img[style*="background-image"] {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: auto;
+        -ms-interpolation-mode: bicubic;
+        background-attachment: scroll;
+      }
+      
+      /* Force hardware acceleration for smoother rendering */
+      .owl-carousel.home-slider .slider-item .slider-text .one-third,
+      .ftco-about .img-about .img {
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+      }
+      
+      /* Contact Form Message Styling */
+      #form-message {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      
+      #form-message.alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+      
+      #form-message.alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+      
+      #submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    </style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300"> 
 	  
@@ -53,7 +98,7 @@
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last order-1 img" style="background-image:url(images/front.png);">
+	          	<div class="one-third js-fullheight order-md-last order-1 img" style="background-image:url(images/IMD_0008.png);"> <!--front-->
 	          		<div class="overlay"></div>
 	          	</div>
 		          <div class="one-forth d-flex order-2 align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
@@ -72,7 +117,7 @@
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last order-1 img" style="background-image:url(images/2.png);">
+	          	<div class="one-third js-fullheight order-md-last order-1 img" style="background-image:url(images/IMD_0003.png);">
 	          		<div class="overlay"></div>
 	          	</div>
 		          <div class="one-forth d-flex order-2 align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
@@ -94,7 +139,7 @@
     			<div class="col-md-6 col-lg-5 d-flex">
     				<div class="img-about img d-flex align-items-stretch">
     					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/front.png);">
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/IMD_0007.png);">
 	    				</div>
     				</div>
     			</div>
@@ -120,7 +165,7 @@
 	                <span class="number">20</span><strong style="font-weight: 700; font-size: 20px; color: #ffbd39; display: inline;">+</strong>
 	                <span>Projects Completed</span>
                 </p>
-                <p><a href="https://drive.google.com/uc?export=download&id=16dgdV7hUk00bgqAI9mWO7rGTPpiJmVLC" class="btn btn-primary py-3 px-3" download>Download Resume</a></p>
+                <p><a href="#" id="resume-download-link-1" class="btn btn-primary py-3 px-3" download>Download Resume</a></p>
               </div>
 	          </div>
 	        </div>
@@ -182,7 +227,7 @@
     		</div>
     		<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://drive.google.com/uc?export=download&id=16dgdV7hUk00bgqAI9mWO7rGTPpiJmVLC" class="btn btn-primary py-4 px-5" target="_blank" rel="noopener noreferrer">Download Resume</a></p>
+    				<p><a href="#" id="resume-download-link-2" class="btn btn-primary py-4 px-5" target="_blank" rel="noopener noreferrer">Download Resume</a></p>
     			</div>
     		</div>
     	</div>
@@ -693,28 +738,32 @@
 
         <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
+            <form id="contact-form" class="bg-light p-4 p-md-5 contact-form">
+              <div id="form-message" class="alert" role="alert" style="display: none;"></div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                <button type="submit" id="submit-btn" class="btn btn-primary py-3 px-5">
+                  <span id="submit-text">Send Message</span>
+                  <span id="submit-spinner" style="display: none;">Sending...</span>
+                </button>
               </div>
             </form>
           
           </div>
 
           <div class="col-md-6 d-flex">
-          	<div class="img" style="background-image: url(images/about.png);"></div>
+          	<div class="img" style="background-image: url(images/IMD_0003.png);"></div>
           </div>
         </div>
       </div>
@@ -800,7 +849,95 @@
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
   
+  <!-- EmailJS for contact form -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
   <script src="js/main.js"></script>
+  
+  <!-- Resume Download Link Configuration -->
+  <script>
+    // ============================================
+    // RESUME DOWNLOAD LINK - UPDATE THIS ONE PLACE
+    // ============================================
+    const RESUME_DOWNLOAD_LINK = 'https://drive.google.com/uc?export=download&id=1Fx52n7gIWOHvVtWCoDYCJino1D6Lx7M3';
+    
+    // Set the resume link for all download buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      const resumeLinks = document.querySelectorAll('[id^="resume-download-link"]');
+      resumeLinks.forEach(function(link) {
+        link.href = RESUME_DOWNLOAD_LINK;
+      });
+    });
+  </script>
+  
+  <!-- Contact Form Handler -->
+  <script>
+    // Initialize EmailJS (you'll need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key)
+    (function(){
+      emailjs.init("ljRuYHIi2RUyNpQw_"); // Replace with your EmailJS Public Key
+    })();
+
+    // Contact form submission handler
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const submitText = document.getElementById('submit-text');
+      const submitSpinner = document.getElementById('submit-spinner');
+      const formMessage = document.getElementById('form-message');
+      
+      // Disable submit button and show loading state
+      submitBtn.disabled = true;
+      submitText.style.display = 'none';
+      submitSpinner.style.display = 'inline';
+      formMessage.style.display = 'none';
+      
+      // Get form data
+      const formData = {
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        to_email: 'banneheka.cp@gmail.com' // Your receiving email address
+      };
+      
+      // Send email using EmailJS
+      // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS service and template IDs
+      emailjs.send('service_bfqua93', 'template_ur0538l', formData)
+        .then(function(response) {
+          // Success
+          formMessage.className = 'alert alert-success';
+          formMessage.textContent = 'Thank you! Your message has been sent successfully. I\'ll get back to you soon.';
+          formMessage.style.display = 'block';
+          
+          // Reset form
+          document.getElementById('contact-form').reset();
+          
+          // Re-enable submit button
+          submitBtn.disabled = false;
+          submitText.style.display = 'inline';
+          submitSpinner.style.display = 'none';
+          
+          // Scroll to message
+          formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, function(error) {
+          // Error
+          formMessage.className = 'alert alert-danger';
+          formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or email me directly at banneheka.cp@gmail.com';
+          formMessage.style.display = 'block';
+          
+          // Re-enable submit button
+          submitBtn.disabled = false;
+          submitText.style.display = 'inline';
+          submitSpinner.style.display = 'none';
+          
+          // Scroll to message
+          formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          
+          console.error('EmailJS Error:', error);
+        });
+    });
+  </script>
     
   </body>
 </html>
