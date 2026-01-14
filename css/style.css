@@ -3439,6 +3439,10 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem; }
+  .navbar.ftco-navbar-light,
+  .navbar.ftco_navbar.ftco-navbar-light {
+    background: transparent !important;
+    background-color: transparent !important; }
   .navbar > .container,
   .navbar > .container-fluid {
     display: -webkit-box;
@@ -8164,8 +8168,11 @@ h1, h2, h3, h4, h5,
 .text-primary {
   color: #ffbd39 !important; }
 
-.ftco-navbar-light {
+.ftco-navbar-light,
+.navbar.ftco-navbar-light,
+.navbar-dark.ftco-navbar-light {
   background: transparent !important;
+  background-color: transparent !important;
   position: absolute;
   top: 0;
   left: 0;
@@ -8298,9 +8305,12 @@ h1, h2, h3, h4, h5,
     left: 0;
     top: 0;
     margin-top: -130px;
-    background: #000000 !important;
-    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background: transparent !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
     padding: 0 15px; }
     .ftco-navbar-light.scrolled .nav-item > .nav-link {
       color: #fff !important; }

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Charith Banneheka - Portfolio | Software Engineer</title>
+    <title>Charith Banneheka - Portfolio | Senior Software Engineer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Portfolio of Charith Banneheka - Software Engineer based in Sri Lanka. View my projects, skills, and experience.">
-    <meta name="keywords" content="Charith Banneheka, Software Engineer, Portfolio, Web Developer, Sri Lanka">
+    <meta name="description" content="Portfolio of Charith Banneheka - Senior Software Engineer based in Sri Lanka. View my projects, skills, and experience.">
+    <meta name="keywords" content="Charith Banneheka, Senior Software Engineer, Portfolio, Web Developer, Sri Lanka">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -67,6 +67,34 @@
         opacity: 0.6;
         cursor: not-allowed;
       }
+      
+      /* Navbar Transparency - Override CSS file with maximum specificity */
+      nav.navbar.navbar-dark.ftco_navbar.ftco-navbar-light.site-navbar-target#ftco-navbar,
+      nav.navbar.navbar-dark.ftco_navbar.ftco-navbar-light.site-navbar-target,
+      #ftco-navbar.navbar.navbar-dark.ftco_navbar.ftco-navbar-light.site-navbar-target,
+      .navbar.navbar-dark.ftco-navbar-light,
+      .navbar.ftco-navbar-light {
+        background: transparent !important;
+        background-color: transparent !important;
+      }
+      
+      nav.navbar.ftco_navbar.ftco-navbar-light.site-navbar-target#ftco-navbar.scrolled,
+      nav.navbar.ftco_navbar.ftco-navbar-light.site-navbar-target.scrolled,
+      #ftco-navbar.navbar.ftco_navbar.ftco-navbar-light.site-navbar-target.scrolled {
+        background: transparent !important;
+        background-color: rgba(0, 0, 0, 0.1) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+      }
+      
+      @media (max-width: 991.98px) {
+        nav.navbar.ftco_navbar.ftco-navbar-light.site-navbar-target#ftco-navbar,
+        #ftco-navbar.navbar.ftco_navbar.ftco-navbar-light.site-navbar-target {
+          background: rgba(0, 0, 0, 0.8) !important;
+        }
+      }
     </style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300"> 
@@ -98,14 +126,14 @@
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last order-1 img" style="background-image:url(images/IMD_0008.png);"> <!--front-->
+	          	<div class="one-third js-fullheight order-md-last order-1 img" style="background-image: url('images/IMD_0008.png');">
 	          		<div class="overlay"></div>
 	          	</div>
 		          <div class="one-forth d-flex order-2 align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
 		          		<span class="subheading">Welcome to My Portfolio</span>
 			            <h1 class="mb-4 mt-3">I'm <span>Charith Banneheka</span></h1>
-			            <h2 class="mb-4">Software Engineer</h2>
+			            <h2 class="mb-4">Senior Software Engineer</h2>
 			            <p><a href="#projects-section" class="btn btn-primary py-3 px-4">View My Work</a> <a href="#contact-section" class="btn btn-white btn-outline-white py-3 px-4">Get In Touch</a></p>
 		            </div>
 		          </div>
@@ -117,13 +145,13 @@
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last order-1 img" style="background-image:url(images/IMD_0003.png);">
+	          	<div class="one-third js-fullheight order-md-last order-1 img" style="background-image: url('images/IMD_0003.png');">
 	          		<div class="overlay"></div>
 	          	</div>
 		          <div class="one-forth d-flex order-2 align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
 		          		<span class="subheading">Portfolio</span>
-			            <h1 class="mb-4 mt-3">I'm a <span>software engineer</span> passionate about AI & Cloud Computing</h1>
+			            <h1 class="mb-4 mt-3">I'm a <span>senior software engineer</span> passionate about AI & Cloud Computing</h1>
 			            <p><a href="#projects-section" class="btn btn-primary py-3 px-4">View My Work</a> <a href="#about-section" class="btn btn-white btn-outline-white py-3 px-4">Learn More</a></p>
 		            </div>
 		          </div>
@@ -139,7 +167,7 @@
     			<div class="col-md-6 col-lg-5 d-flex">
     				<div class="img-about img d-flex align-items-stretch">
     					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/IMD_0007.png);">
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image: url('images/IMD_0007.png');">
 	    				</div>
     				</div>
     			</div>
@@ -148,7 +176,7 @@
 		          <div class="col-md-12 heading-section ftco-animate">
 		          	<h1 class="big">About</h1>
             <h2 class="mb-4">About Me</h2>
-            <p>I'm a passionate software engineer specializing in innovative AI-driven solutions and cloud computing. With a strong foundation in developing efficient, scalable applications, I'm constantly updating my tech stack and expanding my skills to stay at the cutting edge of technology. My passion for cloud computing drives me to build robust, scalable systems that leverage the power of modern cloud platforms. I thrive on solving complex problems and transforming ideas into impactful digital solutions.</p>
+            <p>I'm a passionate senior software engineer specializing in innovative AI-driven solutions and cloud computing. With a strong foundation in developing efficient, scalable applications, I'm constantly updating my tech stack and expanding my skills to stay at the cutting edge of technology. My passion for cloud computing drives me to build robust, scalable systems that leverage the power of modern cloud platforms. I thrive on solving complex problems and transforming ideas into impactful digital solutions.</p>
 		            <ul class="about-info mt-4 px-md-0 px-2">
 		            	<li class="d-flex"><span>Name:</span> <span>Charith Banneheka</span></li>
 		            	<li class="d-flex"><span>Date of birth:</span> <span>March 17, 1995</span></li>
@@ -165,7 +193,7 @@
 	                <span class="number">20</span><strong style="font-weight: 700; font-size: 20px; color: #ffbd39; display: inline;">+</strong>
 	                <span>Projects Completed</span>
                 </p>
-                <p><a href="#" id="resume-download-link-1" class="btn btn-primary py-3 px-3" download>Download Resume</a></p>
+                <p><a href="#" id="resume-download-link-1" class="btn btn-primary py-3 px-3" download>Download CV</a></p>
               </div>
 	          </div>
 	        </div>
@@ -219,7 +247,7 @@
     				</div>
     				<div class="resume-wrap ftco-animate">
     					<span class="date">Jan 2020 - Sep 2022</span>
-    					<h2>Associate Software Engineer</h2>
+    					<h2>Software Engineer / Associate Software Engineer</h2>
     					<span class="position">Digiratina Technology Solutions</span>
     					<p class="mt-4">I began my career at Digiratina Technology Solutions as an Associate Software Engineer and was later promoted to Software Engineer based on performance and continuous improvement. During this time, I gained strong hands-on experience in building and maintaining microservice-based applications using Java and Spring Boot, while working across SQL and NoSQL databases and AWS cloud environments. In parallel with my development responsibilities, I also played a Scrum Master–style supporting role, initially shadowing the Scrum Master in 2020 and later helping to facilitate Agile ceremonies and team coordination. I worked closely with QA teams to improve software quality and delivery efficiency, and I also took on a leadership role in guiding and mentoring new engineers joining the team. This experience strengthened both my technical capability and my ability to contribute effectively within collaborative, Agile-driven environments.</p>
     				</div>
@@ -227,7 +255,7 @@
     		</div>
     		<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="#" id="resume-download-link-2" class="btn btn-primary py-4 px-5" target="_blank" rel="noopener noreferrer">Download Resume</a></p>
+    				<p><a href="#" id="resume-download-link-2" class="btn btn-primary py-4 px-5" target="_blank" rel="noopener noreferrer">Download CV</a></p>
     			</div>
     		</div>
     	</div>
@@ -675,12 +703,12 @@
       </div>
     </section>
 
-    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/2.jpg)">
+    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url('images/2.jpg')">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-7 ftco-animate text-center">
 						<h2>Let's <span style="color: #000;">Work Together</span></h2>
-						<p>I’m excited to explore global opportunities and open to relocating for the right role. If you’re looking for a passionate Software Engineer who enjoys building scalable, reliable solutions, I’d be glad to connect and see how we can work together!</p>
+						<p>I'm excited to explore global opportunities and open to relocating for the right role. If you're looking for a passionate Senior Software Engineer who enjoys building scalable, reliable solutions, I'd be glad to connect and see how we can work together!</p>
 						<p class="mb-0"><a href="#contact-section" class="btn btn-primary py-3 px-5">Get In Touch</a></p>
 					</div>
 				</div>
@@ -763,7 +791,7 @@
           </div>
 
           <div class="col-md-6 d-flex">
-          	<div class="img" style="background-image: url(images/IMD_0026.png);"></div>
+          	<div class="img" style="background-image: url('images/IMD_0026.png');"></div>
           </div>
         </div>
       </div>
@@ -776,7 +804,7 @@
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About</h2>
-              <p>Software Engineer passionate about creating innovative solutions and delivering high-quality software. Welcome to my portfolio showcasing my work and experience.</p>
+              <p>Senior Software Engineer passionate about creating innovative solutions and delivering high-quality software. Welcome to my portfolio showcasing my work and experience.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 				<li class="ftco-animate"><a href="https://www.linkedin.com/in/charith-banneheka" target="_blank" rel="noopener noreferrer"><span class="icon-linkedin"></span></a></li>
                 <li class="ftco-animate"><a href="https://www.facebook.com/charith.banneheka" target="_blank" rel="noopener noreferrer"><span class="icon-facebook"></span></a></li>
@@ -853,6 +881,26 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   
   <script src="js/main.js"></script>
+  
+  <!-- Force Navbar Transparency on Page Load -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbar = document.getElementById('ftco-navbar');
+      if (navbar) {
+        // Force transparent background on page load
+        navbar.style.background = 'transparent';
+        navbar.style.backgroundColor = 'transparent';
+        
+        // Also ensure it stays transparent when at top
+        window.addEventListener('scroll', function() {
+          if (window.scrollY < 150) {
+            navbar.style.background = 'transparent';
+            navbar.style.backgroundColor = 'transparent';
+          }
+        });
+      }
+    });
+  </script>
   
   <!-- Resume Download Link Configuration -->
   <script>
